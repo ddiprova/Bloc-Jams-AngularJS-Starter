@@ -1,6 +1,7 @@
 (function() {
-   function Fixtures()
+   function Fixtures() {
    var Fixtures = {};
+
    var albumPicasso = {
       title: 'The Colors',
       artist: 'Pablo Picasso',
@@ -29,14 +30,22 @@
           { title: 'Can you hear me now?', duration: '3:14' },
           { title: 'Wrong phone number', duration: '2:15' }
       ]
-  };
+    };
   Fixtures.getAlbum = function() {
          return albumPicasso;
-     };
-         return Fixtures;
-     }
+    };
 
+  Fixtures.getCollection = function(numberOfAlbums) {
+    var albumsArray = [];
+    for (var i = 0; i < numberOfAlbums; i++) {
+       albumsArray.push(albumPicasso);
+     }
+       return albumsArray;
+    };
+       return Fixtures;
+  };
      angular
          .module('blocJams')
          .factory('Fixtures', Fixtures);
+
  })();
