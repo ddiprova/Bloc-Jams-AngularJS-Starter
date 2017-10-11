@@ -1,6 +1,11 @@
 (function() {
      function SongPlayer() {
           var SongPlayer = {};
+
+/**
+* @desc current song placeholder
+* @type {Object}
+*/
           var currentSong = null;
 /**
 * @desc Buzz object audio file
@@ -23,18 +28,23 @@
     });
         currentSong = song;
     };
-
-
+/**
+* @function playSong
+* @desc Starts playing song and sets song.playing to true
+* @param {Object} song
+*/
+    var playSong = function(song) {
+      currentBuzzObject.play();
+      song.playing = true;
+    };
 
     SongPlayer.play = function(song) {
-      console.log("SongPlayer.play called")
       if (currentSong !== song) {
           setSong(song);
-          currentBuzzObject.play();
-          song.playing = true;
+          playSong(song);
       } else if (currentSong === song) {
             if (currentBuzzObject.isPaused()) {
-                currentBuzzObject.play();
+                playSong(song);
             }
         }
       };
@@ -45,6 +55,8 @@
      };
         return SongPlayer;
     };
+
+
 
      angular
          .module('blocJams')
