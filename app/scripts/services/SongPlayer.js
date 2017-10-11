@@ -23,10 +23,11 @@
     });
         currentSong = song;
     };
-        return SongPlayer;
-};
+
+
 
     SongPlayer.play = function(song) {
+      console.log("SongPlayer.play called")
       if (currentSong !== song) {
           setSong(song);
           currentBuzzObject.play();
@@ -42,6 +43,8 @@
           currentBuzzObject.pause();
           song.playing = false;
      };
+        return SongPlayer;
+    };
 
      angular
          .module('blocJams')
