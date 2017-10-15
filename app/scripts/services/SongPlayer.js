@@ -106,7 +106,7 @@
      SongPlayer.previous = function() {
      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
      currentSongIndex--;
-    //   console.log("currentSongIndex prev = ", + currentSongIndex);
+    //   console.log("currentSongIndex = ", + currentSongIndex);
      if (currentSongIndex < 0) {
           stopSong();
     //     currentBuzzObject.stop();
@@ -125,7 +125,7 @@
       SongPlayer.next = function() {
         var currentSongIndex = getSongIndex(SongPlayer.currentSong);
             currentSongIndex++;
-    //        console.log("currentSongIndex next = ", + currentSongIndex);
+    //        console.log("currentSongIndex = ", + currentSongIndex);
             if (currentSongIndex >= currentAlbum.songs.length) {
                  stopSong();
   //              currentBuzzObject.stop();
